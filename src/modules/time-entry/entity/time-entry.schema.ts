@@ -1,5 +1,6 @@
+import { Company } from '@modules/company';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
+import { HydratedDocument, Schema as MongooseSchema } from 'mongoose';
 
 export type TimeEntryDocument = HydratedDocument<TimeEntry>;
 
@@ -18,6 +19,9 @@ export class TimeEntry {
 
   @Prop()
   billable: boolean;
+
+  @Prop({type: MongooseSchema.Types.ObjectId, ref: Company.name})
+  company: string;
 }
 
 export const TimeEntrySchema = SchemaFactory.createForClass(TimeEntry);
