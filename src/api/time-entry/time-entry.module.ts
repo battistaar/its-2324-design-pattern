@@ -16,9 +16,9 @@ import { TimeEntryModule } from "@modules/time-entry";
   ],
   controllers: [TimeEntryController],
   providers: [
-  TimeEntryResultFactory,
-  TimeEntryResultCalculatorService
-]
+    TimeEntryResultFactory,
+    TimeEntryResultCalculatorService
+  ]
 })
 
 export class TimeEntryApiModule {}
